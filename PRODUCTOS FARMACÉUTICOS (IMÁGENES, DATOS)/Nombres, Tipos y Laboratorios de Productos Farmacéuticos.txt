@@ -1,0 +1,32 @@
+
+LABORATORIO:
+
+1 Farmaindustria
+2 Medifarma
+3 Bayer
+4 Refasa
+5 Sanitas
+
+TIPO:
+
+I Comercial
+
+1 Naxen, Antiinflamatorio
+2 Celestamine, Trata afecciones alérgicas
+3 Bactrim Forte, Tratar variedad de infecciones bacterianas
+
+II Genérico
+
+4 Betametasona, Antiinflamatorio
+5 Naproxeno, Tratamiento del dolor leve a moderado 
+
+III Venta Libre
+
+6 Lumbal,Alivio rápido de dolor de espalda
+7 Sinutab Plus, Alivio de congestión y gripe
+
+IV Control Especial
+
+8 Morphine, Narcótico, medicina estimulante
+9 Sicozapina, Tratamiento de la esquizofrenia
+10 Fenobarbital, Anticonvulsivo
