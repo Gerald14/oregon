@@ -38,14 +38,12 @@
         }
 
         function popup4() {
-            parametro = window.open("php/ventana_venta.php", "", "width=600,height=400");
-            parametro.document.getElementById('1').value = "IDCV";
-            parametro.document.getElementById('2').value = "NombreCV";
-            parametro.document.getElementById('3').value = "DNICV";
-            parametro.document.getElementById('4').value = "IDMV";
-            parametro.document.getElementById('5').value = "SubTV";
-            parametro.document.getElementById('6').value = "IGVV";
-            parametro.document.getElementById('7').value = "TotalV";
+            parametro = window.open("php/ventana_ordenCompra.php", "", "width=600,height=400");
+            parametro.document.getElementById('1').value = "id_cliente";
+            parametro.document.getElementById('2').value = "nombre_cliente";
+            parametro.document.getElementById('3').value = "apellidos_cliente";
+            parametro.document.getElementById('4').value = "dni_cliente";
+            parametro.document.getElementById('5').value = "telefono_cliente";
         }
 
         function popup3() {
@@ -90,9 +88,8 @@
                 <ul>
                     <li class="h"><a href="#tab2_1" class="x"><img src="imagenes/añadir.png" class="b">Orden de Requerimiento</a></li>
                     <li class="h"><a href="#tab2_2" class="x"><img src="imagenes/añadir.png" class="b">Orden de compra</a></li>
-                    <li class="h"><a href="#tab2_3" class="x"><img src="imagenes/añadir.png" class="b">Registrar Productos</a></li>
-                    <li class="h"><a href="#tab2_4" class="x"><img src="imagenes/ojo.png" class="b">Visualizar Productos</a></li>
-                    <li class="h"><a href="#tab2_5" class="x"><img src="imagenes/ojo.png" class="b">Reporte de Inventario</a></li>
+                    <li class="h"><a href="#tab2_3" class="x"><img src="imagenes/añadir.png" class="b">Registrar Factura</a></li>
+                    <li class="h"><a href="#tab2_4" class="x"><img src="imagenes/ojo.png" class="b">Mantener Insumos</a></li>
                 </ul>
             </li>
 
@@ -211,19 +208,17 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-9">
-                            <button type="button" class=" btn btn-info" style="position:absolute; left:860px;" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Agregar productos</button>
+                            <button type="button" class=" btn btn-info" style="position:absolute; left:890px;" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus"></i> Agregar productos</button>
                         </div>
                     </div>
-                    <div id="resultados" class="form-group" style="position:absolute; left:90px; top:500px;">
+                    <div id="resultados" class="form-group" style="position:absolute; left:220px; top:500px;">
                         <div class="col-sm-9">
-                            <table class="table">
+                            <table class="table" style="width:830px;">
                                 <tbody>
                                     <tr>
                                         <th>CODIGO</th>
                                         <th class="text-center">CANT.</th>
                                         <th>DESCRIPCION</th>
-                                        <th>SUCURSAL</th>
-                                        <th>NOTA</th>
                                         <th><span class="pull-right">PRECIO UNIT.</span></th>
                                         <th><span class="pull-right">PRECIO TOTAL</span></th>
                                         <th></th>
@@ -231,15 +226,11 @@
                                     <tr>
 
                                         <td class="text-center">1</td>
-                                        <td class="text-center col-md-1">
+                                        <td class="text-center col-md-2">
                                             <input type="number" style="text-align:center" value="2" class="form-control input-sm" onblur="actualizar_item(this.value,1,'5307')">
                                         </td>
                                         <td>Motosierra </td>
-                                        <td>ZAPATERIA LUIS CORNEL</td>
-                                        <td class="col-md-2">
-                                            <input type="text" value="" class="form-control input-sm" onblur="actualizar_item(this.value,5,'5307')">
-                                        </td>
-                                        <td class="col-md-2">
+                                        <td class="col-md-3">
                                             <input type="text" style="text-align:right" value="400" class="form-control input-sm" onblur="actualizar_item(this.value,2,'5307')">
                                         </td>
                                         <td><span class="pull-right">800</span></td>
@@ -248,17 +239,12 @@
                                         </td>
                                     </tr>
                                     <tr>
-
                                         <td class="text-center">1</td>
-                                        <td class="text-center col-md-1">
+                                        <td class="text-center col-md-2">
                                             <input type="number" style="text-align:center" value="1" class="form-control input-sm" onblur="actualizar_item(this.value,1,'5318')">
                                         </td>
                                         <td>Motosierra </td>
-                                        <td>ZAPATERIA LUIS CORNEL</td>
-                                        <td class="col-md-2">
-                                            <input type="text" value="" class="form-control input-sm" onblur="actualizar_item(this.value,5,'5318')">
-                                        </td>
-                                        <td class="col-md-2">
+                                        <td class="col-md-3">
                                             <input type="text" style="text-align:right" value="400" class="form-control input-sm" onblur="actualizar_item(this.value,2,'5318')">
                                         </td>
                                         <td><span class="pull-right">400</span></td>
@@ -269,15 +255,11 @@
                                     <tr>
 
                                         <td class="text-center">2</td>
-                                        <td class="text-center col-md-1">
+                                        <td class="text-center col-md-2">
                                             <input type="number" style="text-align:center" value="1" class="form-control input-sm" onblur="actualizar_item(this.value,1,'5308')">
                                         </td>
                                         <td>Motosierra de 14"</td>
-                                        <td>ZAPATERIA LUIS CORNEL</td>
-                                        <td class="col-md-2">
-                                            <input type="text" value="" class="form-control input-sm" onblur="actualizar_item(this.value,5,'5308')">
-                                        </td>
-                                        <td class="col-md-2">
+                                        <td class="col-md-3">
                                             <input type="text" style="text-align:right" value="250" class="form-control input-sm" onblur="actualizar_item(this.value,2,'5308')">
                                         </td>
                                         <td><span class="pull-right">250</span></td>
@@ -285,39 +267,19 @@
                                             <span class="pull-right"><a href="#" onclick="eliminar('5308')"><i class="glyphicon glyphicon-trash"></i></a></span>
                                         </td>
                                     </tr>
-                                    <tr>
-
-                                        <td class="text-center">5</td>
-                                        <td class="text-center col-md-1">
-                                            <input type="number" style="text-align:center" value="1" class="form-control input-sm" onblur="actualizar_item(this.value,1,'5319')">
-                                        </td>
-                                        <td>Motosierra de 30</td>
-                                        <td>DE LA ROCHA</td>
-                                        <td class="col-md-2">
-                                            <input type="text" value="" class="form-control input-sm" onblur="actualizar_item(this.value,5,'5319')">
-                                        </td>
-                                        <td class="col-md-2">
-                                            <input type="text" style="text-align:right" value="800" class="form-control input-sm" onblur="actualizar_item(this.value,2,'5319')">
-                                        </td>
-                                        <td><span class="pull-right">800</span></td>
-                                        <td>
-                                            <span class="pull-right"><a href="#" onclick="eliminar('5319')"><i class="glyphicon glyphicon-trash"></i></a></span>
-                                        </td>
-                                    </tr>
-
 
                                     <tr>
-                                        <td colspan="6"><span class="pull-right">Neto $</span></td>
+                                        <td colspan="4"><span class="pull-right">Neto $</span></td>
                                         <td><span class="pull-right">2.250</span></td>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6"><span class="pull-right">IVA $</span></td>
+                                        <td colspan="4"><span class="pull-right">IVA $</span></td>
                                         <td><span class="pull-right">0</span></td>
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6"><span class="pull-right">Total $</span></td>
+                                        <td colspan="4"><span class="pull-right">Total $</span></td>
                                         <td><span class="pull-right">2.250</span></td>
                                         <td></td>
                                     </tr>
@@ -325,8 +287,6 @@
                             </table>
                         </div>
                     </div>
-                    < <input type="submit" value="Registrar" class="btn__enviar">
-                    <button type="button" onclick="imprimir('6396')" class="btn btn-default" style="margin-right: 5px;"><i class="fa fa-print"></i> Imprimir</button>
 
                 </form>
             </div>
@@ -364,69 +324,133 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="buscar">Buscar O/R:</label>
+                        <label class="control-label col-sm-2" for="id_proveedor">N° Orden de Requerimiento:</label>
                         <div class="col-sm-9">
-                            <input class="form-control" id="myInput" type="text" placeholder="Buscar Orden de requerimiento..">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover table-active">
-                                    <thead class="bg-primary">
-                                        <th>Codigo</th>
-                                        <th>Nombre de Producto</th>
-                                        <th>Laboratorio</th>
-                                        <th>Precio</th>
-                                        <th>Stock</th>
-                                        <th>Descripcion</th>
-                                    </thead>
-
-                                    <?php
-                                    include 'conexion.php';
-                                    $sql = "SELECT * FROM producto";
-                                    $result = mysqli_query($conexion, $sql);
-
-                                    while ($row = mysqli_fetch_array($result)) {
-                                        ?>
-
-                                        <tbody id="myTable">
-                                            <tr>
-                                                <td><a href="#" onclick="enviar1(<?php print $row["id_producto"]; ?>,'<?php print $row["nombre_producto"]; ?>','<?php print $row["laboratorio_producto"]; ?>','<?php print $row["precio_producto"]; ?>');"> <?php print $row["id_producto"]; ?></a></td>
-                                                <td><a href="#" onclick="enviar1(<?php print $row["id_producto"]; ?>,'<?php print $row["nombre_producto"]; ?>','<?php print $row["laboratorio_producto"]; ?>','<?php print $row["precio_producto"]; ?>');"> <?php print $row["nombre_producto"]; ?></a></td>
-                                                <td><a href="#" onclick="enviar1(<?php print $row["id_producto"]; ?>,'<?php print $row["nombre_producto"]; ?>','<?php print $row["laboratorio_producto"]; ?>','<?php print $row["precio_producto"]; ?>');"> <?php print $row["laboratorio_producto"]; ?></a></td>
-                                                <td><a href="#" onclick="enviar1(<?php print $row["id_producto"]; ?>,'<?php print $row["nombre_producto"]; ?>','<?php print $row["laboratorio_producto"]; ?>','<?php print $row["precio_producto"]; ?>');"> <?php print $row["precio_producto"]; ?></a></td>
-                                                <td><a href="#"> <?php print $row["cantidad_producto"]; ?></a></td>
-                                                <td><a href="#"> <?php print $row["desc_producto"]; ?></a></td>
-                                            </tr>
-                                        </tbody>
-                                    <?php
-                                    }
-                                    ?>
-                                </table>
-                            </div>
+                            <input type="text" class="form-control" id="id_proveedor" name="id_proveedor" placeholder="Buscar orden de requeriminento.." readonly required> <br>
+                            <button type="button" class="btn btn-primary" onclick="popup()">Buscar</button>
                         </div>
 
+
                     </div>
-                 <input type="submit" value="Registrar" class="btn__enviar">
+                    <input type="submit" value="Registrar" class="btn__enviar">
 
                 </form>
             </div>
         </article>
         <article id="tab2_3">
+            <div class="nav-form">
+                <a href="#" class="nav-a">INICIO</a><span class="nav-span">></span><a href="#" class="nav-a">GESTION COMPRA</a><span class="nav-span">></span><a href="#tab" class="nav-a1">REGISTRAR FACTURA DE COMPRA</a>
+            </div>
+            <div class="h2-titulo">
+                <h2>Registrar Factura de Compra</h2>
+            </div>
+            <div class="container">
+                <h3>Nueva Factura de Compra</h3>
 
+                <form class="form-horizontal" action="php/save_esperaruby.php" method="post" class="form-register" onsubmit="return validar()" name="form3" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="id_proveedor">N° Orden de Factura :</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control datepicker" name="purchase_date" value="6396" disabled="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="id_proveedor">N° Orden de compra:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="id_proveedor" name="id_proveedor" placeholder="Buscar orden de compra.." readonly required> <br>
+                            <button type="button" class="btn btn-primary" onclick="popup4()">Buscar</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="nombre_producto">Codigo de factura:</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="nombre_producto" placeholder="Ingrese codigo" name="nombre_producto" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="img_producto">Imagen de factura:</label>
+                        <div class="col-sm-9">
+                            <input type="file" id="img_producto" name="img_producto"><br /><br />
+                        </div>
+                    </div>
+                    <input type="submit" value="Registrar" class="btn__enviar">
+                </form>
+            </div>
         </article>
         <article id="tab2_4">
+        <div class="nav-form">
+                <a href="#" class="nav-a">INICIO</a><span class="nav-span">></span><a href="#" class="nav-a">GESTION DE COMPRAS</a><span class="nav-span">></span><a href="#tab" class="nav-a1">Mantener Insumos</a>
+            </div>
+            <h2 class="h2-titulo">Mantener Insumos</h2>
+            <div class="container">
+                <h3>Lista de Insumos</h3>
+                <input class="form-control" id="myInputs" type="text" placeholder="Buscar insumo">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-active">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Laboratorio</th>
+                                <th>Tipo</th>
+                                <th>Descripcion</th>
+                                <th>Imagen</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Accion1</th>
+                            </tr>
+                        </thead>
+                        <?php
+                        include 'php/conexion.php';
+                        $sql = "SELECT * FROM producto";
+                        $result = mysqli_query($conexion, $sql);
 
-        </article>
-        <article id="tab2_5">
+                        while ($mostrar = mysqli_fetch_array($result)) {
+                            ?>
+                            <tbody id="myTable">
+                                <tr>
+                                    <td><?php echo $mostrar['id_producto']  ?></td>
+                                    <td><?php echo $mostrar['nombre_producto']  ?></td>
+                                    <td><?php echo $mostrar['laboratorio_producto']  ?></td>
+                                    <td><?php echo $mostrar['tipo_producto']  ?></td>
+                                    <td><?php echo $mostrar['desc_producto']  ?></td>
+                                    <td><img height="250px" width="200px" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['img_producto']); ?>" /></td>
+                                    <td><?php echo $mostrar['cantidad_producto']  ?></td>
+                                    <td><?php echo $mostrar['precio_producto']  ?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-info" onClick="window.location.href='modificarProducto.php?id=<?php echo $mostrar['id_producto']; ?>'">Editar</button>
 
+                                        <button class="btn btn-danger glyphicon glyphicon-remove" onclick="preguntarSiNo('<?php echo $mostrar['id_producto'] ?>')">
+
+                                        </button>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div>
+
+
+            </div>
+            <div class="container">
+                <div id="tabla"></div>
+
+
+            </div>
         </article>
         <article id="tab3">
             <div class="nav-form">
                 <a href="#" class="nav-a">INICIO</a><span class="nav-span">></span><a href="#" class="nav-a">GESTION DE INVENTARIO</a><span class="nav-span">></span><a href="#tab" class="nav-a1">Registrar Productos</a>
             </div>
             <div class="h2-titulo">
-                <h2>Registrar Productos</h2>
+                <h2>Mantener Insumos</h2>
             </div>
             <div class="container">
-                <h3>Nuevo Producto</h3>
+                <h3>Insumo</h3>
                 <form class="form-horizontal" id="maquina-form" action="php/producto.php" method="post" onsubmit="return validar()" enctype="multipart/form-data">
 
                     <div class="form-group">
@@ -628,6 +652,15 @@ $(document).ready(function(){
                 });
             });
         });
+
+        function enviar1(id_cliente, nombre_cliente, apellidos_cliente, dni_cliente, telefono_cliente) {
+            opener.document.form3.id_cliente.value = id_cliente;
+            opener.document.form3.nombre_cliente.value = nombre_cliente;
+            opener.document.form3.apellidos_cliente.value = apellidos_cliente;
+            opener.document.form3.dni_cliente.value = dni_cliente;
+            opener.document.form3.telefono_cliente.value = telefono_cliente;
+            close()
+        }
     </script>
 
 
